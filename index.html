@@ -1,103 +1,402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barnabas J - Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J Barnabas | Portfolio</title>
+
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #edf5f1;
+        font-family: "Georgia", "Times New Roman", serif;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #243b35;
+      }
+
+      body > * {
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      .header-container {
+        background-color: #ffffff;
+        border: 1px solid #c8ddd3;
+        border-top: 8px solid #0f766e;
+        border-radius: 12px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(15, 118, 110, 0.1);
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .header-content {
+        flex: 1 1 55%;
+        min-width: 250px;
+      }
+
+      .header-content h2 {
+        font-family: Arial, sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #0f766e;
+        margin-bottom: 15px;
+      }
+
+      .intro {
+        font-family: Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #37594d;
+        margin-bottom: 8px;
+        font-style: italic;
+      }
+
+      #name {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 2.3rem;
+        color: #134e4a;
+        display: inline-block;
+      }
+
+      #role {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0f766e;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .header-desc {
+        background-color: #f0fdfa;
+        border-left: 4px solid #14b8a6;
+        padding: 18px 22px;
+        color: #334155;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .profile-pic {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 170px;
+        height: 170px;
+        border: 5px solid #99f6e4;
+        box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
+        flex-shrink: 0;
+      }
+
+      .subhead {
+        font-family: Arial, sans-serif;
+        color: #134e4a;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #0f766e;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      #skills {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      li#item {
+        color: #243b35;
+        font-size: 0.96rem;
+        line-height: 1.7;
+        padding: 15px 20px;
+        background: #ffffff;
+        border: 1px solid #d1e5dc;
+        border-left: 4px solid #0f766e;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      }
+
+      #skills li#item {
+        border: 1px solid #0f766e;
+        background: #ccfbf1;
+        color: #115e59;
+        font-weight: 600;
+        padding: 9px 17px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      li#item strong,
+      li#item b {
+        color: #115e59;
+        font-weight: 700;
+      }
+
+      #email,
+      #github,
+      #linkedin,
+      #resume {
+        background-color: #ffffff;
+        border: 1px solid #d1e5dc;
+        border-radius: 8px;
+        padding: 14px 18px;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        color: #243b35;
+        overflow-wrap: anywhere;
+      }
+
+      #email a,
+      #github a,
+      #linkedin a,
+      #resume a {
+        color: #0f766e;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 700px) {
         body {
-            background-color: #fcfffd;
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            border: 2px solid black;
-            padding: 25px;
+          padding: 20px 12px;
         }
+
+        .header-container {
+          padding: 25px 20px;
+        }
+
         header {
-            text-align: center;
-            color: #0b0080;
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          gap: 20px;
         }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border: 2px solid #0b0080;
-            border-radius: 12px;
-            padding: 5px;
+
+        .profile-pic {
+          width: 130px;
+          height: 130px;
         }
+
+        #name {
+          font-size: 1.8rem;
+        }
+
+        #role {
+          font-size: 0.9rem;
+        }
+
         .subhead {
-            font-family: 'Times New Roman', Times, serif;
-            color: #0b0080;
-            font-size: 26px;
-            border-bottom: 1px solid gray;
-            padding-bottom: 5px;
+          font-size: 1rem;
+          margin-top: 28px;
         }
-        .list { list-style-type: square; }
-        .item { color: #000; padding: 5px; }
-        a { color: blue; }
+
+        li#item {
+          font-size: 0.9rem;
+          padding: 12px 15px;
+        }
+
+        #skills li#item {
+          font-size: 0.85rem;
+          padding: 7px 12px;
+        }
+
+        .header-desc {
+          padding: 14px;
+          font-size: 0.88rem;
+        }
+      }
     </style>
-</head>
-<body>
-    <header>
-        <img src="image(5).png" alt="Orange cat wearing glasses" class="profile-img">
-        <h1>Welcome to My Portfolio</h1>
-        <h2>Barnabas J</h2>
-    </header>
+  </head>
 
-    <h3>Hi, I'm <i>Barnabas J</i>, a final-year B.Tech Information Technology student passionate about Software Testing, Data Analytics and Web Development.</h3>
+  <body>
+    <div class="header-container">
+      <header>
+        <div class="header-content">
+          <h2>Welcome to My Portfolio</h2>
 
-    <h2 class="subhead">About Me</h2>
-    <p>I am a final-year Information Technology student at S.A. Engineering College. I have knowledge of Python, SQL, Software Testing and Data Analytics. I enjoy solving problems and developing software applications.</p>
+          <h3 class="intro">Hi, I'm <span id="name"></span></h3>
 
-    <h2 class="subhead">Education</h2>
-    <ul>
-        <li class="item">B.Tech Information Technology - S.A. Engineering College (2023 - 2027)</li>
-        <li class="item">CGPA: 7.6</li>
-        <li class="item">Higher Secondary - S.B.O.A Matriculation and Hr. Sec. School</li>
-        <li class="item">12th Percentage: 80%</li>
-    </ul>
+          <p id="role"></p>
 
-    <h2 class="subhead">List of My Skills</h2>
-    <ul class="list">
-        <li class="item">HTML</li>
-        <li class="item">CSS</li>
-        <li class="item">JavaScript</li>
-        <li class="item">Python</li>
-        <li class="item">Java</li>
-        <li class="item">C</li>
-        <li class="item">SQL</li>
-        <li class="item">Software Testing</li>
-        <li class="item">Power BI</li>
-        <li class="item">Flask and Django</li>
-        <li class="item">MongoDB</li>
-        <li class="item">Git and GitHub</li>
-    </ul>
+          <p class="header-desc">
+            I am a final-year B.Tech Information Technology student at S.A.
+            Engineering College. I am passionate about Data Analytics, SQL,
+            Python and Web Development. I enjoy transforming raw data into
+            meaningful insights and building software applications.
+          </p>
+        </div>
 
-    <h2 class="subhead">Experience</h2>
-    <ul>
-        <li class="item">Data Science Intern - Globesci Technologies Pvt. Ltd. (June 2026 - July 2026)</li>
-        <li class="item">Worked on data cleaning, preprocessing and exploratory data analysis using Python.</li>
-        <li class="item">Created data visualizations to identify trends and patterns.</li>
-    </ul>
+        <img
+          class="profile-pic"
+          src="image(5).png"
+          alt="Barnabas J Profile"
+          width="200"
+          height="200"
+        />
+      </header>
+    </div>
 
-    <h2 class="subhead">Projects</h2>
-    <ul>
-        <li class="item">QR-Based Attendance System - Developed an attendance system using QR code scanning and geolocation verification.</li>
-        <li class="item">NYC School Construction Analytics - Analyzed construction costs and schedules using Python, SQL and SQLite.</li>
-        <li class="item">Adaptive Multi-Agent GraphRAG - Developing an intelligent system for retrieving and verifying information from enterprise documents.</li>
-    </ul>
+    <h2 class="subhead">My Technical Skills</h2>
+    <ul id="skills"></ul>
 
-    <h2 class="subhead">Certificates</h2>
-    <ul>
-        <li class="item">Software Testing - NPTEL</li>
-        <li class="item">Programming in Java - NPTEL</li>
-        <li class="item">MongoDB Basics - Vel Technologies</li>
-    </ul>
+    <h2 class="subhead">Internship Experience</h2>
+    <ul id="experience"></ul>
 
-    <h2 class="subhead">Contact</h2>
-    <p>Email: <a href="mailto:basj347@gmail.com">basj347@gmail.com</a></p>
-    <p>Phone: 7904198229</p>
-    <p>GitHub: <a href="https://github.com/basj347-code">My GitHub</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/barnabas-j-a606242a4">My LinkedIn</a></p>
-    <p>Download my <a href="J_Barnabas_Resume_Test_Analyst.pdf" download>Resume</a> here.</p>
-</body>
+    <h2 class="subhead">My Projects</h2>
+    <ul id="projects"></ul>
+
+    <h2 class="subhead">Certifications</h2>
+    <ul id="certificate"></ul>
+
+    <h2 class="subhead">Contact Me</h2>
+    <p id="email">Email:</p>
+    <p id="github"></p>
+    <p id="linkedin"></p>
+    <p id="resume"></p>
+
+    <script>
+      const userData = {
+        name: "J Barnabas",
+        role: "B.Tech Information Technology | Aspiring Data Analyst",
+        email: "basj347@gmail.com",
+        githubUrl: "https://github.com/basj347-code",
+        linkedinUrl: "https://www.linkedin.com/in/barnabas-j-a606242a4",
+        resumeUrl: "J_Barnabas_Resume_ATS.pdf",
+
+        skills: [
+          "SQL",
+          "Python",
+          "Power BI",
+          "Data Analysis",
+          "Data Cleaning",
+          "EDA",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "C",
+          "Flask",
+          "Django",
+          "SQLite",
+          "MongoDB",
+          "Git/GitHub",
+        ],
+
+        experience: [
+          {
+            position:
+              "Data Science Intern - Globesci Technologies Pvt. Ltd. | Worked with real-world datasets using Python, performed data cleaning, preprocessing and exploratory data analysis (EDA). Created data visualizations to identify trends, discover patterns and present meaningful insights from the data.",
+            duration: "June 2026 - July 2026",
+          },
+        ],
+
+        projects: [
+          {
+            title: "NYC School Construction Cost & Schedule Analytics",
+            description:
+              "Analyzed construction project costs and schedules using Python, SQL and SQLite. Retrieved public datasets using NYC Open Data API and automated data ingestion.",
+          },
+          {
+            title: "QR-Based Attendance System",
+            description:
+              "Developed an attendance system using QR code scanning and geolocation verification to prevent proxy attendance.",
+          },
+          {
+            title: "Adaptive Multi-Agent GraphRAG",
+            description:
+              "Developing a multi-agent system for retrieving, verifying and explaining information from enterprise documents.",
+          },
+        ],
+
+        certificates: [
+          {
+            title: "Software Testing",
+            issuer: "NPTEL",
+          },
+          {
+            title: "Programming in Java",
+            issuer: "NPTEL",
+          },
+          {
+            title: "MongoDB Basics",
+            issuer: "Vel Technologies",
+          },
+        ],
+      };
+
+      const nameElem = document.getElementById("name");
+      const roleElem = document.getElementById("role");
+      const skillsListElem = document.getElementById("skills");
+      const experienceListElem = document.getElementById("experience");
+      const projectsListElem = document.getElementById("projects");
+      const certificateListElem = document.getElementById("certificate");
+      const emailLink = document.getElementById("email");
+      const githubLink = document.getElementById("github");
+      const linkedinLink = document.getElementById("linkedin");
+      const resumeElem = document.getElementById("resume");
+
+      nameElem.innerText = userData.name;
+      roleElem.innerText = userData.role;
+
+      skillsListElem.innerHTML = userData.skills
+        .map((skill) => `<li id="item">${skill}</li>`)
+        .join("");
+
+      experienceListElem.innerHTML = userData.experience
+        .map(
+          (exp) =>
+            `<li id="item"><b>${exp.position}</b> (${exp.duration})</li>`,
+        )
+        .join("");
+
+      projectsListElem.innerHTML = userData.projects
+        .map(
+          (proj) =>
+            `<li id="item"><strong>${proj.title}</strong> - ${proj.description}</li>`,
+        )
+        .join("");
+
+      certificateListElem.innerHTML = userData.certificates
+        .map((cert) => `<li id="item">${cert.title} - ${cert.issuer}</li>`)
+        .join("");
+
+      emailLink.innerHTML = `Email : <a href="mailto:${userData.email}">${userData.email}</a>`;
+
+      githubLink.innerHTML = `Github : <a href="${userData.githubUrl}">${userData.githubUrl}</a>`;
+
+      linkedinLink.innerHTML = `Linkedin : <a href="${userData.linkedinUrl}">${userData.linkedinUrl}</a>`;
+
+      resumeElem.innerHTML = `Download my <a href="${userData.resumeUrl}">Resume</a> here`;
+    </script>
+  </body>
 </html>
